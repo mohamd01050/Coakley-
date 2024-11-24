@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="مرحبًا بكم في كوكلي! نوفر لك ملخصات مشوقة لأفضل الأفلام. اكتشف الآن تلخيص سريع وجذاب للأفلام في مكان واحد.">
+        <meta name="keywords" content="كوكلي, ملخصات أفلام, أفلام جديدة, أفلام هوليوود, سينما, ملخص فيلم, أفلام أكشن, أفلام كوميديا, ملخصات مشوقة">
+        <meta name="author" content="كوكلي">
+        <meta property="og:title" content="كوكلي | تلخيص الأفلام بطريقة مشوقة">
+        <meta property="og:description" content="مشاهدة وتحميل ملخصات أفلام جديدة ومميزة. انضم إلينا لتبقى على اطلاع بأحدث الأفلام!">
+        <meta property="og:image" content="https://yt3.googleusercontent.com/Tgr_VaGfjEGpx7jTHgnStWWOA--etzeGkO8zF4a4uaxrIx5Hv8oDHsafQllbii778i58PFYjexs=s160-c-k-c0x00ffffff-no-rj">
+        <meta property="og:url" content="https://github.com/username/repo"> <!-- عدّل الرابط حسب الريبو الخاص بك -->
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="كوكلي | تلخيص الأفلام بطريقة مشوقة">
+        <meta name="twitter:description" content="مشاهدة وتحميل ملخصات أفلام جديدة ومميزة. انضم إلينا لتبقى على اطلاع بأحدث الأفلام!">
+        <meta name="twitter:image" content="https://yt3.googleusercontent.com/Tgr_VaGfjEGpx7jTHgnStWWOA--etzeGkO8zF4a4uaxrIx5Hv8oDHsafQllbii778i58PFYjexs=s160-c-k-c0x00ffffff-no-rj">
+    
+    <title>كوكلي | فيديوهات</title>
+
+    <!-- إضافة الأيقونة (favicon) -->
+    <link rel="icon" href="https://yt3.googleusercontent.com/Tgr_VaGfjEGpx7jTHgnStWWOA--etzeGkO8zF4a4uaxrIx5Hv8oDHsafQllbii778i58PFYjexs=s160-c-k-c0x00ffffff-no-rj" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            direction: rtl;
+        }
+        header {
+            background-color: #ff0000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        header img {
+            width: 40px;
+            height: auto;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-player {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-player iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .video-card {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        .video-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .video-card .content {
+            padding: 10px;
+        }
+        .video-card h4 {
+            margin: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .video-card .actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            gap: 10px;
+        }
+        .video-card .actions button {
+            flex: 1;
+            padding: 8px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .video-card .actions .watch-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+        .video-card .actions .watch-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .video-card .actions .download-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .video-card .actions .download-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Loading Screen Styles */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 9999;
+            flex-direction: column;
+        }
+        .loading-container .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #ff0000;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+        .loading-container .loading-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeInOut 2s infinite;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 25px #ff0000, 0 0 5px #ff0000;
+        }
+
+        /* Keyframes for spinner animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Keyframes for fading text animation */
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (min-width: 600px) {
+            .video-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .video-card {
+                width: calc(33.333% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://yt3.googleusercontent.com/Tgr_VaGfjEGpx7jTHgnStWWOA--etzeGkO8zF4a4uaxrIx5Hv8oDHsafQllbii778i58PFYjexs=s160-c-k-c0x00ffffff-no-rj" alt="شعار كوكلي تك">
+        <h1><a href="https://www.youtube.com/channel/UCro0Ac_TiYuIRyVgoIeZ30g" target="_blank">اشترك في القناة ليصلكم كل جديد</a></h1>
+    </header>
+
+    <div class="container">
+        <!-- Loading Screen -->
+        <div class="loading-container" id="loadingContainer">
+            <div class="spinner"></div>
+            <p class="loading-text">جاري تحميل الفيديوهات... إن لم تظهر تحقق من الاتصال بالإنترنت</p>
+        </div>
+
+        <!-- مشغل الفيديو -->
+        <div class="video-player" id="videoPlayer">
+            <iframe id="mainVideoPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <h2 id="mainVideoTitle">اختر فيديو لعرضه</h2>
+        </div>
+
+        <!-- معرض الفيديوهات -->
+        <div class="video-gallery" id="videoGallery">
+            <!-- Videos will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = "AIzaSyAAm5dZqhw-X9eVtUeNCQ0_y2MsF39Hafw";
+        const CHANNEL_ID = "UCro0Ac_TiYuIRyVgoIeZ30g";
+        const API_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&type=video&order=date&maxResults=50`;
+
+        const videoPlayer = document.getElementById('videoPlayer');
+        const mainVideoPlayer = document.getElementById('mainVideoPlayer');
+        const mainVideoTitle = document.getElementById('mainVideoTitle');
+        const videoGallery = document.getElementById('videoGallery');
+        const loadingContainer = document.getElementById('loadingContainer');
+
+        function getConnectionSpeed() {
+            if (navigator.connection) {
+                return navigator.connection.downlink || 1;
+            }
+            return 1;
+        }
+
+        function fetchVideos() {
+            const delay = Math.max(2000 - getConnectionSpeed() * 500, 1000);
+            setTimeout(() => {
+                fetch(API_URL)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.items.forEach(item => {
+                            const videoId = item.id.videoId;
+                            const title = item.snippet.title;
+                            const thumbnail = item.snippet.thumbnails.high.url;
+
+                            const videoCard = document.createElement('div');
+                            videoCard.className = 'video-card';
+                            videoCard.innerHTML = `
+                                <img src="${thumbnail}" alt="${title}">
+                                <div class="content">
+                                    <h4>${title}</h4>
+                                    <div class="actions">
+                                        <button class="watch-btn" onclick="playVideo('${videoId}', '${title}')">مشاهدة</button>
+                                        <button class="download-btn" onclick="downloadVideo('${videoId}')">تحميل</button>
+                                    </div>
+                                </div>
+                            `;
+                            videoGallery.appendChild(videoCard);
+                        });
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        loadingContainer.style.display = 'none';
+                        videoGallery.style.display = 'flex';
+                    });
+            }, delay);
+        }
+
+        // تشغيل الفيديو
+        function playVideo(videoId, title) {
+            mainVideoPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            mainVideoTitle.textContent = title;
+            videoPlayer.style.display = 'block';
+        }
+
+        // تنزيل الفيديو
+        function downloadVideo(videoId) {
+            const downloadUrl = `https://www.ssyoutube.com/watch?v=${videoId}`;
+            window.open(downloadUrl, '_blank');
+        }
+
+        fetchVideos(); // تحميل الفيديوهات عند فتح الصفحة
+    </script>
+</body>
+</html>
